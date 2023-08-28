@@ -64,7 +64,6 @@ class ImageClipboardWeb extends ImageClipboard {
       ]);
       js.context['navigator']['clipboard']
           .callMethod('write', [js.JsArray()..add(clipboardItem)]);
-      print('Image copied to clipboard');
     }
 
     // Call the clipboardCopy function

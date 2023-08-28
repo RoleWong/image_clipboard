@@ -10,6 +10,12 @@ class MockImageClipboardPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<void> copyImage(String imagePath) {
+    // TODO: implement copyImage
+    throw UnimplementedError();
+  }
 }
 
 void main() {
