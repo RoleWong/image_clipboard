@@ -1,6 +1,6 @@
 name: image_clipboard
-description: A Flutter plugin for copying images to the clipboard on Web, Windows, and macOS platforms.
-version: 1.1.0
+description: A Flutter plugin for copying and reading images to the clipboard on Web, Windows, and macOS platforms.
+version: 1.1.0+1
 homepage: https://trtc.io/products/chat?utm_source=gfs&utm_medium=link&utm_campaign=%E6%B8%A0%E9%81%93&_channel_track_key=k6WgfCKn
 repository: https://github.com/RoleWong/image_clipboard
 

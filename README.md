@@ -1,7 +1,7 @@
 
 # image_clipboard
 
-A Flutter plugin for copying images to the clipboard on Web, Windows, and macOS platforms. 
+A Flutter plugin for copying and reading images to the clipboard on Web, Windows, and macOS platforms. 
 
 This plugin was initially developed by the [Tencent Cloud Chat](https://trtc.io/products/chat?utm_source=gfs&utm_medium=link&utm_campaign=%E6%B8%A0%E9%81%93&_channel_track_key=k6WgfCKn) Flutter team for use in the [Tencent Cloud Chat Flutter TUIKit](https://www.tencentcloud.com/document/product/1047/50059?from=pub) chat component library and is now available for everyone to use.
 

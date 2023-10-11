@@ -6,7 +6,7 @@ import 'package:universal_html/html.dart' as html;
 
 import 'image_clipboard_platform_interface.dart';
 
-typedef WebImageCallback = void Function(html.File imageFile);
+typedef WebImageCallback = void Function(html.File imageFile, String blobUrl);
 
 class ImageClipboard {
   Future<String?> getPlatformVersion() {
@@ -55,11 +55,12 @@ class ImageClipboard {
   ///
   /// This function adds a 'paste' event listener to the window object on the Web platform.
   /// When an image is pasted, the provided [onWebImage] callback function will be called with
-  /// the pasted image as an [html.File] object.
+  /// the pasted image as an [html.File] object and its corresponding [blobUrl].
   ///
   /// Note: This function is intended to be used on the Web platform only.
   ///
-  /// [onWebImage]: A callback function that will be called with the pasted image as an [html.File] object.
+  /// [onWebImage]: A callback function that will be called with the pasted image as an [html.File] object
+  ///               and its corresponding [blobUrl].
   void addWebPasteListener(WebImageCallback onWebImage) {
     if (kIsWeb) {
       html.window.addEventListener('paste', (event) async {
@@ -67,7 +68,8 @@ class ImageClipboard {
         try {
           if (clipboardEvent.clipboardData!.files!.isNotEmpty) {
             html.File imageFile = clipboardEvent.clipboardData!.files![0];
-            onWebImage(imageFile);
+            String blobUrl = html.Url.createObjectUrl(imageFile);
+            onWebImage(imageFile, blobUrl);
           }
         } catch (e) {
           // Log the error if reading the image failed.
